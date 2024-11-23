@@ -110,7 +110,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
     //
     // https://en.wikipedia.org/wiki/Grayscale
     {
-        float     BITS = 32.; // produces banding even for 32 or 64 ... likely because the blue has smallest resolution so it jumps - 10%)
+        float     BITS = 8.; // produces banding even for 32 or 64 ... likely because the blue has smallest resolution so it jumps - 10%)
         vec3 LUMINANCE = vec3( .2126, .7152, .0722 );
 
         bits2 = BITS * LUMINANCE;
@@ -118,7 +118,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
 
     // Let's ignore other channels to see what banding is there with just one channel ...
     {
-        float     BITS = 32.;
+        float     BITS = 8.;
         
         vec3 LUMINANCE = vec3( 0, 0, .0722 ); // That banding is not caused by blue being lowest resolution always!
         // vec3 LUMINANCE = vec3( .2126, 0, 0 ); // I don't see any  big banding corellation there
